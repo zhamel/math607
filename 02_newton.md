@@ -10,18 +10,24 @@ Rooting Finding
 
 Iterative techniques for solving $f(x) = 0$ for $x$.
 
-*Bisection*: start with an interval $[a, b]$ bracketing the root.
+*Bisection*: **Linear convergence**. Start with an interval $[a, b]$ bracketing the root.
 Evaluate the midpoint.  Replace one end, maintaining a root bracket.
-Linear convergence.  Slow but **robust**.
+  Slow but **robust**.
 
 *Newton's Method*: $x_{k+1} = x_k - f(x_k) / f'(x_k)$.  Faster,
-quadratic convergence (number of correct decimals places doubles each
+**quadratic convergence** (number of correct decimals places doubles each
 iteration).
 
 Downsides of Newton's Method: need derivative info, and additional
 smoothness.  Convergence usually not guaranteed unless "sufficiently
-close": not **robust**.
+close": **not robust**.
 
+*Secant Method*: $x_{k+1} = x_k - (f(x_k) (x_{k-1} - x_k)) / (f(x_{k-1}) - f(x_k))$. **Sublinear convergence**:
+faster than bisection but slower than Newton's method. Useful when the derivative of the function is more complicated
+than the function itself, hard to compute, nd simply doesn't exist. Need two initial values.
+
+Downsides of Secant's Method: similarly to Newton's, not guaranteed to converge if the initial
+values are "too far": **not robust**.
 
 
 Systems
